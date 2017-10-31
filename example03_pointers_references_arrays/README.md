@@ -1,10 +1,9 @@
-An introduction to if, else, switch, for, while, do
+An introduction to pointers, references and arrays
 
-We also cover handling user input from the console here.
+This is quite a complicated exercise, some explanation can be found here: 
 
-We use if and switch statements to handle the user input.
-
-We use loops to keep looping when user input is incorrect or insufficient
+http://www.geeksforgeeks.org/new-and-delete-operators-in-cpp-for-dynamic-memory/
+https://www.ntu.edu.sg/home/ehchua/programming/cpp/cp4_PointerReference.html
 
 To run this program, from this directory, do the following:
 
@@ -12,4 +11,4 @@ To run this program, from this directory, do the following:
 `cd bin`             - enter this directory<br>
 `cmake ..`           - invokes CMakelists.txt and places binaries in bin folder<br>
 `make`               - starts compiling and generating the executable<br>
-`./branches_conditionals`      - run the created executable
+`./pra`      		 - run the created executable
