@@ -1,5 +1,8 @@
 A simple hello world program.
 
+This project contains an inc folder of headers, a src folder of cpp files and
+a CMakeLists.txt file, which tells the compiler how to compile this project.
+
 The main function is in main.cpp. It uses a function called PrintHelloWorld.
 PrintHelloWorld is DECLARED in MyFunctions.h and DEFINED in MyFunctions.cpp
 
