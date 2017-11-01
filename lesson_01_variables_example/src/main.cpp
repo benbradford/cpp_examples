@@ -91,7 +91,7 @@ void characterTypes() {
 
 	cout << endl << "*** Characters ***" << endl;
 	print_information<char>("char", c);
-	// we cannot print information on const char*
+	// we cannot call print_information on const char*
 	cout << "****************" << endl;
 }
 
@@ -102,25 +102,27 @@ void signedAndUnsigned() {
 	// each integer (and char) variable type has a default when the signage is not specified
 
 	// signed values use their most signficant bit to indicate if it is positive or negative
-	// this means, the left most 0 or 1 in the binary representation is used to indicate signage
+	// this means, the left most 0 or 1 in their binary representation is used to indicate signage
 	// if this value is 0 then the number is positive
 	// if this value is 1 then the number is negative
 	// more information here: https://en.wikipedia.org/wiki/Two%27s_complement
 
 	// note that since unsigned numbers do not require a bit to indicate signage,
-	// it means that these numbers can therefore be large, since the bit is not wasted
+	// it means that these numbers can therefore be double the size, since the bit is not wasted on signage
 
+	// signed can be positive or negative
 	signed char c = 'a';
-	signed short s = 0;
-	signed int i = 1;
-	signed long l = 2;
-	signed long long ll = 3;
+	signed short s = -1;
+	signed int i = -2;
+	signed long l = -3;
+	signed long long ll = -4;
 
+	// unsigned can only be positive
 	unsigned char uc = 'b';
-	unsigned short us = 4;
-	unsigned int ui = 5;
-	unsigned long ul = 6;
-	unsigned long long ull = 7;
+	unsigned short us = 1;
+	unsigned int ui = 2;
+	unsigned long ul = 3;
+	unsigned long long ull = 4;
 
 	cout << "*** Signage ***" << endl;
 	cout << "== Signed" << endl;

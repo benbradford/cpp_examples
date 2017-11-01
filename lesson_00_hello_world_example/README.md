@@ -6,11 +6,8 @@ a CMakeLists.txt file, which tells the compiler how to compile this project.
 The main function is in main.cpp. It uses a function called PrintHelloWorld.
 PrintHelloWorld is DECLARED in MyFunctions.h and DEFINED in MyFunctions.cpp
 
-main.cpp has to #include the MyFunctions.h file in order to use these functions.
+main.cpp has to #include the MyFunctions.h file in order to use this function.
 
-It then calls another function PrintGoodbye which returns an integer.
-
-This integer is returned at the end of the main function.
 
 To run this program, from this directory, do the following:
 

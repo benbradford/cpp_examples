@@ -1,0 +1,24 @@
+
+
+Maths.h:
+
+float multiply_then_divide(float f1, float f2, float f3);
+
+
+
+
+Maths.cpp:
+
+float multiply_then_divide(float f1, float f2, float f3) {
+	
+	float multiplied_result = f1 * f2;
+	return multiplied_result / f3;
+}
+
+
+
+
+main.cpp:
+
+float result = multiply_then_divide (15, 3, 5);
+cout << result << endl;
