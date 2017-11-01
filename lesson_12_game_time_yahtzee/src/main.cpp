@@ -10,6 +10,10 @@
 using namespace std;
 using namespace chrono;
 
+namespace ttest {
+
+	#include "ScoreCard.h"
+}
 long now() {
 	return (duration_cast<milliseconds>(time_point_cast<milliseconds>(system_clock::now()).time_since_epoch())).count();
 }
@@ -75,7 +79,7 @@ static const std::array<std::string, 13> score_strings =
 	"6  sixes    ",
 	"7  tripl    ",
 	"8  quad     ",
-	"9  ful      ",
+	"9  full     ",
 	"10 s str    ",
 	"11 l str    ",
 	"12 yahtzee  ",
@@ -160,7 +164,9 @@ int quads() {
 
 int full() {
 
-	return (num_same() == 3 && has_pair()) ? 25 : 0;
+	if (num_same() == 3 && has_pair()) 
+		return 25;
+	return 0;
 }
 
 std::vector<int> sorted() {
