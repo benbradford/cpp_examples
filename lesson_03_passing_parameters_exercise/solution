@@ -20,5 +20,15 @@ float multiply_then_divide(float f1, float f2, float f3) {
 
 main.cpp:
 
-float result = multiply_then_divide (15, 3, 5);
-cout << result << endl;
+#include "Maths.h"
+
+#include <iostream>
+
+using namespace std;
+
+
+int main() {
+	float result = multiply_then_divide (15, 3, 5);
+	cout << result << endl;
+	return 0;
+}
