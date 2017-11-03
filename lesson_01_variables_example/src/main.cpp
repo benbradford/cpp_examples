@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits> // to give us access to std::numeric_limits, used below
 
 using namespace std; // the entire cpp file now has access to cout, endl and others
 
@@ -11,24 +10,11 @@ void characterTypes();
 void signedAndUnsigned();
 void anomalies();
 
-// a function to output information about variable types
-// this is a templated function, which means we can pass type information in
-// more information on templates later, this is a more advance topic
-template <typename T>
-void print_information(const char* name, const T& value) {
-
-	cout << "#" << name << endl;
-	cout << "We have a " << name << " with value " << value << endl;
-	cout << "On this machine, " << name << "s are made up of " << sizeof(T) << " bytes";
-	cout << " or " << sizeof(T) * 8 << " bits.";
-	cout << " It has a min value of " << numeric_limits<T>::min();
-	cout << " and a max value of " << numeric_limits<T>::max() << endl;
-	cout << endl;
-
-}
 
 int main() {
 
+	cout << "There is not much output here, best to look at the code to understand the different primitive variable types" << endl;
+	
 	intTypes();
 	decimalTypes();
 	boolType();
@@ -43,29 +29,17 @@ int main() {
 
 void intTypes() {
 
-	short s = 1;		// the smallest range of int values
-	int i = 2;			// the standard range of int values
-	long l = 3;			// for when you want to store very big or very store values
-	long long ll = 4;	// for when you want to store extremely big or small values
+	short s = 1;		// the smallest range of int values - usually consumes 2 bytes
+	int i = 2;			// the standard range of int values - usually consumes 4 bytes
+	long l = 3;			// for when you want to store very big or very store values - usually consumes 8 bytes
+	long long ll = 4;	// for when you want to store extremely big or small values - usually consumes 8 bytes 
 
-	// output some information on these variables
-	cout << "*** Integers ***" << endl;
-	print_information<short>("short", s);
-	print_information<int>("int", i);
-	print_information<long>("long", l);
-	print_information<long long>("long long", ll);
-	cout << "****************" << endl;
 }
 
 void decimalTypes() {
 
-	float f = 0.0f;		// for standard decimal values - note the f on the end to mean float
-	double d = 1.0;		// for large decimal values
-
-	cout << endl << "*** Decimals ***" << endl;
-	print_information<float>("float", f);
-	print_information<double>("double", d);
-	cout << "****************" << endl;
+	float f = 0.0f;		// for standard decimal values - note the f on the end to mean float - usually consumes 4 bytes
+	double d = 1.0;		// for large decimal values - usually consumes 4 bytes
 
 }
 
@@ -74,25 +48,11 @@ void boolType() {
 	bool b = true;		// bool values can be either true
 	b = false;			// or false
 
-	cout << endl << "*** Boolean ***" << endl;
-	print_information<bool>("bool", b);
-	cout << "***************" << endl;
 }
 
 void characterTypes() {
 
-	char c = 'a';		// a single character, use '' for values
-	const char* s = "hello world"; // this is a pointer to a string of characters
-
-	// const char* is a strange variable declaration
-	// it means 'a pointer in memory to the start of a sequence of characters'
-	// This declaration will actually add a \0 character to the end of the sequence
-	// This is used to tell us when the sequence of characters stop
-
-	cout << endl << "*** Characters ***" << endl;
-	print_information<char>("char", c);
-	// we cannot call print_information on const char*
-	cout << "****************" << endl;
+	char c = 'a';		// a single character, use '' for values - usually consumes 1 byte
 }
 
 void signedAndUnsigned() {
@@ -123,22 +83,6 @@ void signedAndUnsigned() {
 	unsigned int ui = 2;
 	unsigned long ul = 3;
 	unsigned long long ull = 4;
-
-	cout << "*** Signage ***" << endl;
-	cout << "== Signed" << endl;
-	print_information<signed char>("signed char", c);
-	print_information<signed short>("signed short", s);
-	print_information<signed int>("signed int", i);
-	print_information<signed long>("signed long", l);
-	print_information<signed long long>("signed long long", ll);
-	cout << "**************" << endl;
-	cout << "== Unsigned" << endl;
-	print_information<unsigned char>("unsigned char", uc);
-	print_information<unsigned short>("unsigned short", us);
-	print_information<unsigned int>("unsigned int", ui);
-	print_information<unsigned long>("unsigned long", ul);
-	print_information<unsigned long long>("unsigned long long", ull);
-	cout << "**************" << endl;
 }
 
 void anomalies() {

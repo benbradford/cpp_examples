@@ -1,0 +1,42 @@
+
+#include <iostream>
+
+using namespace std;
+
+int multiply(int first, int second) {
+	
+	int result = 0;
+
+	for (int i=0; i < second; ++i) {
+
+		result += first;
+	}
+	return result;
+}
+
+int main() {
+	
+	int first;
+	int second;
+	bool validInput;
+	
+	do {
+
+		cout << "enter first number: ";
+		cin >> first;
+
+		cout << "enter second number: ";
+		cin >> second;
+
+		validInput = first >= 0 && second >=0;
+
+		if (validInput) {
+		
+			cout << first << " * " << second << " = ";
+			cout << multiply(first, second) << endl;
+		}
+
+	} while (validInput);
+
+	return 0; 
+}

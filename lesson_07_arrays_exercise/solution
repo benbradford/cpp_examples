@@ -1,0 +1,46 @@
+
+#include <iostream>
+
+void turn_lights_on() {
+
+	using namespace std; 
+
+	bool lights_on[5] = {false, false, false, false, false};
+
+	cout << "Please switch all lights on" << endl;
+
+	bool are_all_lights_on = false;
+	while (are_all_lights_on == false) {
+
+		for (int i = 0; i < 5; ++i) {
+
+			cout << "Light " << i+1 << " is ";
+			if (lights_on[i])
+				cout << "on";
+			else
+				cout << "off";
+			cout << endl;
+		}
+
+		int light_number = 0;
+		cout << "Please enter a light switch number: ";
+		cin >> light_number;
+
+		if (light_number > 0 && light_number <= 5) {
+
+			lights_on[light_number-1] = !lights_on[light_number-1];
+		}
+
+		are_all_lights_on = true;
+		for (bool light_on : lights_on) {
+
+			if (light_on == false) {
+
+				are_all_lights_on = false;
+				break;
+			}
+		}
+	};
+
+	cout << endl << "All lights are now on! " << endl;
+}

@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+
+void swap(char& first, char& second) {
+
+	char tmp = first; // store the value of first temporarily to perform the swap
+	first = second;
+	second = tmp;
+}
+
+int main() {
+
+	char hello[] = {'o', 'e', 'l', 'l', 'h'};
+
+	swap(hello[0], hello[4]);	// pass in the first and last elements. The function passes by reference
+
+	cout << hello << endl;
+	
+	return 0;
+}

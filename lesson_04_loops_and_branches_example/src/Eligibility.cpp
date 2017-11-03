@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// note function is not declared in the header
+// get_age() function is not declared in the header
 // this means it is only accessible for this file
 // this is a good example of restricting what other files can use, we do not want to expose this function
 int get_age() {
@@ -18,6 +18,8 @@ int get_age() {
 	// since we are streaming a value from the console and into the age variable
 	// if the user doesn't enter a valid int value, then age will be '0'
 
+	cout << endl; // new line
+
 	return age;
 }
 
@@ -25,8 +27,6 @@ int get_age() {
 bool age_check() {
 
 	int age = get_age();
-
-	cout << endl;
 
 	if (age > 120) {
 
