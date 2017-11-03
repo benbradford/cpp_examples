@@ -1,5 +1,7 @@
 #include "Lights.h"
+#include <iostream>
 
+using namespace std;
 // for functions relating to a class, the function name must be prefixed with Lights::
 
 Lights::Lights() {
@@ -15,24 +17,38 @@ Lights::Lights() {
 	}
 
 	// set some initial values for the lights
-	mLights[0].colour = "Yellow";
-	mLights[1].colour = "White";
-	mLights[2].colour = "Blue";
-	mLights[3].colour = "Red";
-	mLights[4].colour = "Green";
+	mLights[0].wattage = 50;
+	mLights[1].wattage = 100;
+	mLights[2].wattage = 150;
+	mLights[3].wattage = 200;
+	mLights[4].wattage = 250;
 
 }
 
-int Lights::get_number_of_lights() {
+void Lights::print_status() {
 
-	return 5;
+	unsigned int light_count = 1;
+	
+	for (Light light : mLights) {
+
+		cout << "Light " << light_count << " is ";
+		cout << light.wattage << " watts ";
+		cout << "and is ";
+
+		if (light.on) cout << "on";
+		else cout << "off";
+
+		cout << endl;
+
+		++light_count;
+	}
 }
 
 bool Lights::are_all_lights_on() {
 
-	for (Light& l : mLights) {
+	for (Light light : mLights) {
 
-		if (l.on == false) return false;
+		if (light.on == false) return false;
 	}
 
 	return true;
@@ -40,20 +56,11 @@ bool Lights::are_all_lights_on() {
 
 void Lights::toggle_light(unsigned int index) {
 
-	if (index >= lights.get_number_of_lights()) {
+	// protect against user input that is outside of the range 0...4
+	if (index >= 5) {
 
 		return;
 	}
 
 	mLights[index].on = !mLights[index].on;
-}
-
-bool Lights::is_light_on(unsigned int index) {
-
-	return mLights[index].on;
-}
-
-const char* Lights::get_light_colour(unsigned int index) {
-
-	return mLights[index].colour;
 }

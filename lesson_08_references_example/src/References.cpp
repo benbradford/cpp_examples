@@ -21,7 +21,7 @@ void references() {
 
 	cout << "after assigning again, the value of r is now " << r << endl << endl;
 
-	//int& ref; // ERROR: a reference MUST refer to something
+	//int& ref; // ERROR: will not compile; a reference MUST refer to something
 }
 
 void increment_ref(int& value) {
