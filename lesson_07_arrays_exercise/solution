@@ -10,6 +10,7 @@ void turn_lights_on() {
 	cout << "Please switch all lights on" << endl;
 
 	bool are_all_lights_on = false;
+	
 	while (are_all_lights_on == false) {
 
 		for (int i = 0; i < 5; ++i) {

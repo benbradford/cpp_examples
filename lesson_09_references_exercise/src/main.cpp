@@ -2,18 +2,12 @@
 using namespace std;
 
 
-void swap(char& first, char& second) {
-
-	char tmp = first;
-	first = second;
-	second = tmp;
-}
-
 int main() {
 
 	char hello[] = {'o', 'e', 'l', 'l', 'h'};
 
-	swap(hello[0], hello[4]);
+	// :TODO: using a function taking two chars as references
+	// swap the first and last elements in this array
 
 	cout << hello << endl;
 	

@@ -39,26 +39,6 @@ void stack_scope() {
 
 } // stack is popped and char c is now out of scope
 
-void references() {
-
-	cout << "references" << endl;
-	int i = 0;
-
-	int& r = i; // r is an alias for i, it refers to exactly the same value
-
-	r = 5; // both r and i now point to a location on the stack with the value 5
-
-	cout << "the value of i is " << i << " and the value of r is " << r << endl;
-
-	int another_int = 3;
-
-	r = another_int; // make r refer to another variable
-
-	cout << "after assigning again, the value of r is now " << r << endl << endl;
-
-	//int& ref; // ERROR: a reference MUST refer to something
-}
-
 void pointers() {
 
 	cout << "pointers" << endl;
@@ -134,59 +114,6 @@ void memory_allocation() {
 	// However at the end of this function, since f is held on the stack we could no longer access it
 	// the memory location on the heap that we reserved memory space for. This is called a memory leak
 	delete f;
-}
-
-void stack_array() {
-
-	cout << "using an array on the stack" << endl;
-	cout << "printing 5 even numbers" << endl;
-
-	// declare an array on the stack and give it initial values
-	int numbers[] = {0,2,4,6,8};
-
-	// range based for loop is available on stack-based arrays
-	for (int n : numbers) {
-
-		cout << n << endl;
-	}
-
-	cout << endl;
-}
-
-void stack_array_2() {
-
-	cout << "another way to use an array on the stack" << endl;
-	char characters[5]; // reserve space for 5 chars on the stack
-
-	// although we have reserved space on the stack, the actual values are undefined
-
-	// we can give them values now. We access array elements using []
-
-	// characters[x] refers to the position in memory that 'numbers' points to, + x elements along
-		
-	characters[0] = 'h';
-	characters[1] = 'e';
-	characters[2] = 'l';
-	characters[3] = 'l';
-	characters[4] = 'o';
-
-	/*
-		Let's visualise this in memory. We have a block of memory on the stack starting at address 3
-		It contains a sequence of chars:
-	   _________________
-		| |h|e|l|l|o| |
-       -----------------
-         2 3 4 5 6 7 8 9 .....
-
-
-         'character' has address 3.
-         'character[4]' has address 3 + 4 - therefore it refers to the value in 7: 'o'
-	*/
-
-	for (char c : characters) 
-		cout << c;
-
-	cout << endl;
 }
 
 void heap_allocated_array(int amount) {

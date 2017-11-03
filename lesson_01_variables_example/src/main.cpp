@@ -2,7 +2,7 @@
 
 using namespace std; // the entire cpp file now has access to cout, endl and others
 
-// forward declaring functions
+// forward declaring functions so that we can then have the main() function at the top
 void intTypes();
 void decimalTypes();
 void boolType();
