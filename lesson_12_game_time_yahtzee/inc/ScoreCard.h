@@ -4,27 +4,32 @@
 
 class ScoreCard {
 public:
-	ScoreCard(const Dice& dice) : mDice(dice) {for (auto& i : mCategoryScores) i=-1;}
+	ScoreCard() {for (auto& i : mCategoryScores) i=-1;}
 
-	void set_score(unsigned int scoreIndex);	
-	void print_score();
+	void set_score(unsigned int scoreIndex, unsigned int (&diceValues)[5]);	
+	void print_scores(unsigned int (&diceValues)[5]);
 
-	bool has_scored(unsigned int scoreIndex) const;
-	int total_score() const;
+	bool has_scored(unsigned int scoreIndex);
+	int total_score();
 
+	bool is_completed();
+	unsigned int num_same(unsigned int (&diceValues)[5]);
+
+	void score_yahtzee();
 private:
 
-	const char* GetScoreCategoryName(unsigned int scoreIndex);
-	int total() const;
-	int total_all_with_score(int score) const;
-	int highest_duplicate() const;
-	bool has_pair() const;
-	int small_straight() const;
-	int large_straight() const;
-	int total_number_scores() const; // 1-6
-	int sorted_unique_dice(Die (&dice)[5]) const;
+	//const char* GetScoreCategoryName(unsigned int scoreIndex);
+	unsigned int total_with_value(unsigned int (&diceValues)[5], unsigned int value);
+	int total(unsigned int (&diceValues)[5]);
+	int total_all_with_score(unsigned int score);
+	int highest_duplicate(unsigned int (&diceValues)[5]);
+	bool has_pair(unsigned int (&diceValues)[5]);
+	int small_straight(unsigned int (&diceValues)[5]);
+	int large_straight(unsigned int (&diceValues)[5]);
+	int total_number_scores(); // 1-6
+	//int sorted_unique_dice(Die (&dice)[5]);
 
 	int mCategoryScores[13];
-	int mNumYahtzees;
-	const Dice& mDice;
+	int mNumYahtzees = 0;
+	//Dice& mDice;
 };

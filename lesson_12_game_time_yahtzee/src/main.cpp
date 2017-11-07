@@ -1,4 +1,6 @@
 // WIP needs refactoring
+
+/*
 #include <cstdlib> // for rand()
 #include <chrono>
 #include <iostream>
@@ -435,5 +437,13 @@ int main() {
 		}
 	}
 
+	return 0;
+}*/
+
+#include "Game.h"
+int main() {
+
+	Game game;
+	game.start();
 	return 0;
 }

@@ -17,7 +17,6 @@ public: // allow everyone access to these section
 	
 private: // only this class can access anything declared in the private section
 
-
 	// variables should always be private in a class, by convention
 	Light mLights[5]; // sore information on the Light objects here in an array
 };

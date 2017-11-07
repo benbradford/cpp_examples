@@ -2,6 +2,6 @@
 
 struct Die {
 
-	int value = 6;
+	unsigned int value = 6;
 	bool held = false;
 };

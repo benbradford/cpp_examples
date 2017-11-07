@@ -19,12 +19,19 @@ int main() {
 void struct_example() {
 
 	// Light is a struct, it cannot be access directly, you need to create an object of type Light
+	// the constructor is called when the light object is created on the following line:
 	Light l;
 
 	// using our new object l, we can access the members of our Light object
 
 	l.on = true;
-	l.wattage = 20;
+	l.watts = 20;
+
+	// we can even have an array of Light objects
+
+	Light lights[10];
+
+	lights[4].watts = 123;
 }
 
 unsigned int get_user_input(Lights& lights);

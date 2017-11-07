@@ -7,11 +7,10 @@ public:
 
 	void roll();
 	void toggle_hold(unsigned int dieIndex);
-	bool is_held(unsigned int dieIndex) const;
+	bool is_held(unsigned int dieIndex);
 	void reset_held();
-
-	//auto dice() const -> const Die(&)[5] { return mDice; }
-	const Die (&dice() const)[5];
+	int value(unsigned int dieIndex);
+	void print();
 private:
 	Die mDice[5];
 };
