@@ -2,17 +2,17 @@
 
 #include "Dice.h"
 #include "ScoreCard.h"
-#include "GameRound.h"
 
 class Game {
 public:
 
+	Game();
+	
 	void start();
 private:
-	void score(unsigned int (&diceValues)[5]);
+	void score();
 	void print();
 
 	Dice mDice;
 	ScoreCard mScoreCard;
-	GameRound mGameRound;
 };
