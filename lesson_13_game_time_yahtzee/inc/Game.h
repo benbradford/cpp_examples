@@ -7,11 +7,12 @@ class Game {
 public:
 
 	Game();
-	
+
 	void start();
 private:
 	void score();
-	void print();
+	void print(int pass_number);
+	bool play_round();
 
 	Dice mDice;
 	ScoreCard mScoreCard;

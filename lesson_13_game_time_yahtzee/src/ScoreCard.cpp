@@ -124,6 +124,11 @@ void ScoreCard::print_scores() {
 
 void ScoreCard::set_score(unsigned int scoreCategory ) {
 
+	if (num_same() == 5) {
+
+		++mNumYahtzees;
+	}
+
 	if (scoreCategory == 1) {
 
 		mCategoryScores[0] = mDice.total_with_value(1);
@@ -201,11 +206,6 @@ unsigned int ScoreCard::num_same() {
 	return highestSame;
 }
 
-void ScoreCard::score_yahtzee() {
-
-	++mNumYahtzees;
-}
-
 bool ScoreCard::full_house() {
 
 	if (num_same() == 3) {
@@ -238,4 +238,26 @@ unsigned int ScoreCard::small_straight() {
 		return 30;
 	}
 	return 0;
+}
+
+unsigned int ScoreCard::total_score() {
+
+	unsigned int total = 0;
+	for (int i = 0; i < 13; ++i) {
+		if (mCategoryScores[i] != -1)
+			total += mCategoryScores[i];
+	}
+	unsigned int number_score = 0;
+	for (int i = 0; i < 6; ++i) {
+		if (mCategoryScores[i] != -1)
+			number_score+= mCategoryScores[i];
+	}
+
+	if (number_score > 64) total += 35;
+
+	if (mNumYahtzees > 1)
+		total += (mNumYahtzees-1) * 100;
+
+	return total;
+
 }

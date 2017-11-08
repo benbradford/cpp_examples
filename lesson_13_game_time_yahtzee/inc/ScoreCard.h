@@ -15,10 +15,8 @@ public:
 	bool is_completed();
 	unsigned int num_same();
 
-	void score_yahtzee();
 private:
 
-	unsigned int total_all_with_score(unsigned int score);
 	unsigned int small_straight();
 	unsigned int large_straight();
 	unsigned int total_number_scores(); // 1-6

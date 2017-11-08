@@ -23,52 +23,40 @@ void Game::start() {
 	while(mScoreCard.is_completed() == false) {
 
 		mDice.reset_held();
-		bool scored = false;
-
-		for (int round = 0; round < 2; ++ round) {
-
-
-			mDice.roll();
-
-			scored = false;
-			while (scored == false) {
-
-				for (int i = 0; i < 30; ++i) cout << endl;
-				mScoreCard.print_scores();
-			
-				mDice.print();
-
-				cout << "round " << round+1 << ": ";
-				char input;
-
-				cin >> input;
-
-				if (input == 'q') {
-
-					return;
-				}
-
-				if (input == '1') mDice.toggle_hold(0);
-				else if (input == '2') mDice.toggle_hold(1);
-				else if (input == '3') mDice.toggle_hold(2);
-				else if (input == '4') mDice.toggle_hold(3);
-				else if (input == '5') mDice.toggle_hold(4);
-				else if (input == 's') {
-					score();
-					scored = true;
-					break;
-				} else if (input == 'r') {
-					break;
-				}
-			}	
-		}
-		if (!scored) {
-
-			score();
+		
+		if (play_round() == false) {
+			return;
 		}
 		
+		score();
 	}
+}
 
+bool Game::play_round() {
+
+	for (int pass_number = 0; pass_number < 2; ++ pass_number) {
+
+		mDice.roll();
+
+		while (true) {
+
+			print(pass_number);
+
+			char input;
+
+			cin >> input;
+
+			if (input == '1') mDice.toggle_hold(0);
+			else if (input == '2') mDice.toggle_hold(1);
+			else if (input == '3') mDice.toggle_hold(2);
+			else if (input == '4') mDice.toggle_hold(3);
+			else if (input == '5') mDice.toggle_hold(4);
+			else if (input == 's') return true;
+			else if (input == 'r') break;
+			else if (input == 'q') return false;
+		}	
+	}
+	return true;
 }
 
 void Game::score() {
@@ -84,7 +72,13 @@ void Game::score() {
 	mScoreCard.set_score(i);
 }
 
-void Game::print() {
+void Game::print(int pass_number) {
 
+	for (int i = 0; i < 30; ++i) cout << endl;
+	mScoreCard.print_scores();
+		
 	mDice.print();
+	cout << "score: " << mScoreCard.total_score() << endl;
+	cout << "pass " << pass_number+1 << ": ";
+			
 }
