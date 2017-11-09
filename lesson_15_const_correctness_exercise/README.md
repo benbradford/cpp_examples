@@ -1,12 +1,9 @@
 Wrapping up all the lessons so far
 
-Bringing together everything looked at so far to make a game of yahtzee on the command line.
+Make the code for the yahtzee game in a previous lesson const correct.
 
-Type numbers 1 - 5 to hold dice.
-Type r to roll again
-Type s to enter score (you have to enter a score after the 3rd roll)
-Type q to quit
-
+Look for member functions which do not change functionality (getters, prints)
+Look for member variables which we never call non-const functions on.
 
 `mkdir bin`          - this will create a directory for our binaries<br>
 `cd bin`             - enter this directory<br>

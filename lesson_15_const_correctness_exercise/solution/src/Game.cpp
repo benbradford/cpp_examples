@@ -66,7 +66,6 @@ void Game::score() {
 	for (int i = 0; i < 30; ++i) cout << endl;
 	mScoreCard.print_scores();
 	mDice.print();
-
 	cout << endl << "select score: ";
 	unsigned int i;
 	cin >> i;
@@ -78,7 +77,7 @@ void Game::score() {
 	mScoreCard.set_score(i);
 }
 
-void Game::print(int pass_number) {
+void Game::print(int pass_number) const {
 
 	for (int i = 0; i < 30; ++i) cout << endl;
 	mScoreCard.print_scores();
