@@ -1,0 +1,93 @@
+#include <iostream>
+
+// could be in SpaceShip.h
+class SpaceShip {
+
+public:
+	float GetSpeed();
+	float GetDirection();
+
+	void AdjustSpeed(float amount);
+	
+	void Turn(float amount);
+	void SetTopSpeed(float topSpeed);
+
+private:
+	void ClampSpeed();
+	void ClampTurn();
+
+	float mSpeed = 0.0f;
+	float mDirection = 0.0f;
+	float mTopSpeed = 10.0f;
+	float mMaxTurn = 1.0f;
+};
+
+
+
+// could be in SpaceShip.cpp
+
+float SpaceShip::GetSpeed() {
+
+	return mSpeed;
+}
+
+float SpaceShip::GetDirection() {
+
+	return mDirection;
+}
+
+void SpaceShip::AdjustSpeed(float amount) {
+
+	mSpeed += amount;
+	ClampSpeed();
+}
+	
+void SpaceShip::Turn(float amount) {
+
+	mDirection += amount;
+	ClampTurn();
+}
+
+void SpaceShip::ClampSpeed() {
+
+	if (mSpeed < 0.0f) {
+
+		mSpeed = 0.0f;
+
+	} else if (mSpeed > mTopSpeed) {
+
+		mSpeed = mTopSpeed;
+	}
+}
+
+void SpaceShip::ClampTurn() {
+
+	if (mDirection < -mMaxTurn) mDirection = -mMaxTurn;
+	if (mDirection > mMaxTurn) mDirection = mMaxTurn;
+}
+
+void SpaceShip::SetTopSpeed(float topSpeed) {
+
+	mTopSpeed = topSpeed;
+	ClampSpeed();
+}
+
+int main() {
+
+	using namespace std;
+
+	SpaceShip ship;
+
+	ship.SetTopSpeed(15.0f);
+	ship.AdjustSpeed(16.0f);
+	cout << ship.GetSpeed() << endl;
+
+	ship.SetTopSpeed(10.0f);
+	cout << ship.GetSpeed() << endl;
+
+	ship.Turn(2.0f);
+	cout << ship.GetDirection() << endl;
+
+
+	return 0;
+}

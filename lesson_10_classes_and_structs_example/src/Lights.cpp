@@ -2,8 +2,8 @@
 #include <iostream>
 
 using namespace std;
-// for functions relating to a class, the function name must be prefixed with Lights::
 
+// for functions relating to a class, the function name must be prefixed with Lights::
 Lights::Lights() {
 
 	// the constructor is called when an instance of the class is created
