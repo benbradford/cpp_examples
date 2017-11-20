@@ -4,20 +4,10 @@
 using namespace std;
 
 // for functions relating to a class, the function name must be prefixed with Lights::
-Lights::Lights() {
 
-	// the constructor is called when an instance of the class is created
+void Lights::set_wattage(unsigned int index, int watts) {
 
-	// by default, each light is set to off, you can see this in the 
-	// definition of the Light struct, where a default value is given to 'on'
-
-	// set some initial values for the lights
-	mLights[0].watts = 50;
-	mLights[1].watts = 100;
-	mLights[2].watts = 150;
-	mLights[3].watts = 200;
-	mLights[4].watts = 250;
-
+	mLights[index] = watts;
 }
 
 void Lights::print_status() {

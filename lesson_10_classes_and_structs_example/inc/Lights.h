@@ -9,11 +9,10 @@ class Lights {
 
 public: // allow everyone access to these section
 
-	Lights(); // constructor - this is called when a Lights object is created
-
 	bool are_all_lights_on();
 	void print_status();
 	void toggle_light(unsigned int index);
+	void set_wattage(unsigned int index, int watts);
 	
 private: // only this class can access anything declared in the private section
 

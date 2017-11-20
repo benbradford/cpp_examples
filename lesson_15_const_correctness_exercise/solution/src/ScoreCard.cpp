@@ -6,7 +6,7 @@ using namespace std;
 ScoreCard::ScoreCard(const Dice& dice) 
 	: mDice(dice) {
 
-	for (auto& i : mCategoryScores) i=-1;
+	for (auto& i : mCategoryScores) i=-1; // -1 means 'no score' as opposed to 0, which means 'a score of 0'
 }
 
 bool ScoreCard::is_completed() const {
@@ -61,7 +61,6 @@ void ScoreCard::print_scores() const {
 		cout << " ? " << mDice.total_with_value(6) << " ? " << endl;
 	else 
 		cout << mCategoryScores[5] << endl;
-
 
 	cout << "7 triple  ";
 	if (mCategoryScores[6] == -1) {
@@ -187,7 +186,6 @@ void ScoreCard::set_score(unsigned int scoreCategory ) {
 
 		mCategoryScores[12] = mDice.total(); 
 	} 
-	
 }
 
 unsigned int ScoreCard::num_same() const {
@@ -247,6 +245,7 @@ unsigned int ScoreCard::total_score() const {
 		if (mCategoryScores[i] != -1)
 			total += mCategoryScores[i];
 	}
+	
 	unsigned int number_score = 0;
 	for (int i = 0; i < 6; ++i) {
 		if (mCategoryScores[i] != -1)
@@ -255,8 +254,7 @@ unsigned int ScoreCard::total_score() const {
 
 	if (number_score > 64) total += 35;
 
-	if (mNumYahtzees > 1)
-		total += (mNumYahtzees-1) * 100;
+	if (mNumYahtzees > 1) total += (mNumYahtzees-1) * 100;
 
 	return total;
 

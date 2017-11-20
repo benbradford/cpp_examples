@@ -39,6 +39,11 @@ unsigned int get_user_input(Lights& lights);
 void class_example() {
 
 	Lights lights; // construct a new Lights instance/object called lights
+	lights.set_wattage(0, 50);
+	lights.set_wattage(1, 100);
+	lights.set_wattage(2, 150);
+	lights.set_wattage(3, 200);
+	lights.set_wattage(4, 250);
 
 	// taking our ongoing lights example, the main loop now looks a lot neater
 	while (lights.are_all_lights_on() == false) {

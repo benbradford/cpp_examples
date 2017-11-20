@@ -7,7 +7,7 @@ struct Light {
 	// this means, anyone can access the members (via an object of this type)
 	
 	bool on = false; // a default value of false is given
-	int watts; 	 	 // no default value for watt - this will be undefined until specified
+	int watts = 50; 
 };
 
 // a struct is just a blueprint. in order to access the members, you need to
