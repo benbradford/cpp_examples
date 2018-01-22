@@ -9,5 +9,5 @@ If you get a compiler error, try and correct it, then re-run 'make' from the com
 
 To run this program, from this directory, do the following:
 
-`make`               - starts compiling and generating the executable<br>
+`make`             - starts compiling and generating the executable<br>
 `bin/params`       - run the created executable

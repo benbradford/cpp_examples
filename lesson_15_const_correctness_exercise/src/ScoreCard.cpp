@@ -196,7 +196,7 @@ unsigned int ScoreCard::num_same() {
 
 	for (int i = 1; i <= 6; ++i) {
 		
-		int numSame = mDice.num_with_value(i);
+		unsigned int numSame = mDice.num_with_value(i);
 
 		if (numSame > highestSame) {
 			highestSame = numSame;

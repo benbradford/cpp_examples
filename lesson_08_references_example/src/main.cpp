@@ -1,4 +1,3 @@
-#include "References.h" 
 
 #include <iostream>
 using namespace std;
@@ -54,7 +53,7 @@ int main() {
 
 	increment_val(val); // value of val will not change
 
-	cout << "value of val after calling increment_val is " << val << "i.e. the same after pass by value" << endl;
+	cout << "value of val after calling increment_val is " << val << " i.e. the same after pass by value" << endl;
 
 	return 0;
 }

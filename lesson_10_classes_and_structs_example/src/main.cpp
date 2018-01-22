@@ -34,7 +34,7 @@ void struct_example() {
 	lights[4].watts = 123;
 }
 
-unsigned int get_user_input(Lights& lights);
+unsigned int get_user_input();
 
 void class_example() {
 
@@ -50,7 +50,7 @@ void class_example() {
 
 		lights.print_status();
 
-		unsigned int light_index = get_user_input(lights);
+		unsigned int light_index = get_user_input();
 
 		lights.toggle_light(light_index);
 
@@ -59,7 +59,7 @@ void class_example() {
 	cout << endl << "All lights are now on! " << endl;
 }
 
-unsigned int get_user_input(Lights& lights) {
+unsigned int get_user_input() {
 
 	unsigned int light_number = 0;
 	cout << "Please enter a light switch number: ";

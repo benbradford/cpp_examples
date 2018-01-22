@@ -7,7 +7,7 @@ using namespace std;
 
 void Lights::set_wattage(unsigned int index, int watts) {
 
-	mLights[index] = watts;
+	mLights[index].watts = watts;
 }
 
 void Lights::print_status() {

@@ -11,5 +11,5 @@ main.cpp has to #include the MyFunctions.h file in order to use this function.
 
 To run this program, from this directory, do the following:
 
-`make`               - starts compiling and generating the executable<br>
-`./bin/hello_world`  - run the created executable
+`make`             - starts compiling and generating the executable<br>
+`bin/hello_world`  - run the created executable

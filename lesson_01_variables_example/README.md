@@ -15,4 +15,4 @@ This program will generate warnings due to unused variables - you can ignore thi
 To run this program, from this directory, do the following:
 
 `make`               	- starts compiling and generating the executable<br>
-`./bin/vars`   		    - run the created executable<br>
+`bin/vars`   		    - run the created executable<br>
