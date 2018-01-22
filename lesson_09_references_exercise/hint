@@ -1,10 +1,8 @@
 
-
 trying calling 
 
 
 swap(hello[0], hello[4]);
-
 
 
 you will need to implement a function like this:

@@ -5,7 +5,7 @@
 class Cards {
 public:
 
-	Cards();
+	Cards(); // specifying a default constructor so we can initialise each Card in mCards
 
 	Card& get_card(unsigned int index);
 	void swap(unsigned int index1, unsigned int index2);

@@ -11,8 +11,5 @@ main.cpp has to #include the MyFunctions.h file in order to use this function.
 
 To run this program, from this directory, do the following:
 
-`mkdir bin`          - this will create a directory for our binaries<br>
-`cd bin`             - enter this directory<br>
-`cmake ..`           - invokes CMakelists.txt and places binaries in bin folder<br>
 `make`               - starts compiling and generating the executable<br>
-`./hello_world`      - run the created executable
+`./bin/hello_world`  - run the created executable

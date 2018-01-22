@@ -10,10 +10,9 @@ Note that everything exists inside only 1 main.cpp file, for convenience.
 This could've been seperated out into header and cpp file(s), but it is
 all in one file instead, to illustrate that this is possible.
 
+This program will generate warnings due to unused variables - you can ignore this for now.
+
 To run this program, from this directory, do the following:
 
-`mkdir bin`          	- this will create a directory for our binaries<br>
-`cd bin`             	- enter this directory<br>
-`cmake ..`           	- invokes CMakelists.txt and places binaries in bin folder<br>
 `make`               	- starts compiling and generating the executable<br>
-`./vars`      		    - run the created executable<br>
+`./bin/vars`   		    - run the created executable<br>

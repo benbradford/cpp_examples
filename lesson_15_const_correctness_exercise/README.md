@@ -1,12 +1,12 @@
-Wrapping up all the lessons so far
 
-Make the code for the yahtzee game in a previous lesson const correct.
+For this exercies, you must make the Yahtzee game const correct.
 
-Look for member functions which do not change functionality (getters, prints)
-Look for member variables which we never call non-const functions on.
+Anything that doesn't change should be changed to const.
 
-`mkdir bin`          - this will create a directory for our binaries<br>
-`cd bin`             - enter this directory<br>
-`cmake ..`           - invokes CMakelists.txt and places binaries in bin folder<br>
+Any function that doesn't change its members, should be declared const.
+
+
+To run this program, from this directory, do the following:
+
 `make`               - starts compiling and generating the executable<br>
-`./yahtzee`       	 - run the created executable
+`./const`       	 - run the created executable

@@ -116,6 +116,13 @@ void memory_allocation() {
 	delete f;
 }
 
+void dangling_pointer() {
+
+	
+}
+
+
+/*
 void heap_allocated_array(int amount) {
 
 	cout << endl << "printing 10 times table" << endl;
@@ -153,4 +160,4 @@ void heap_allocated_array(int amount) {
 	// whenever we 'new' an array, we have to delete it again
 	// the [] part tells the compiler that this is an array we are deleting.
 	delete [] numbers;
-}
+}*/

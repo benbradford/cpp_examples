@@ -16,8 +16,5 @@ Add functions to adjust the turn direction, but keep it within -1.0 and 1.0
 
 To run this program, from this directory, do the following:
 
-`mkdir bin`          - this will create a directory for our binaries<br>
-`cd bin`             - enter this directory<br>
-`cmake ..`           - invokes CMakelists.txt and places binaries in bin folder<br>
 `make`               - starts compiling and generating the executable<br>
-`./classes`      	 - run the created executable
+`bin/classes`      	 - run the created executable
